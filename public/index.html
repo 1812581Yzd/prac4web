@@ -8,5 +8,15 @@
 </head>
 <body>
     <h1>My Prac 4 Express Server</h1>
+    <p id="t"></p>
+    <script>let xhr = new XMLHttpRequest()
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState==4 && xhr.status==200){
+            document.getElementById("t").innerText = `this page was last viewed${xhr.response}`
+        }
+    }
+    xhr.open("GET","/last.txt")
+    xhr.send()
+    </script>
 </body>
 </html>

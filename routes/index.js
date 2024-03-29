@@ -12,24 +12,24 @@ router.get("/hello",function (req,res,next){
 
 
 //3.1
-let last = ""
+let last = "";
 router.get("/last.txt",function(req,res,next){
   if(last ==""){
     last = new Date();
     res.send();
   }else{
     last = new Date();
-    res.send(last)
+    res.send(last);
   }
-})
+});
 
 
 //3.2
-let colors = ["red","yellow","green","blue"]
+let colors = ["red","yellow","green","blue"];
 let visit = 0;
 router.get("/color.html",function(req,res,next){
-  let color = colors[visit%4]
-  visit++
+  let color = colors[visit%4];
+  visit++;
   res.send(`<!DOCTYPE html>
   <html lang="en">
 
@@ -47,10 +47,10 @@ router.get("/color.html",function(req,res,next){
 
 
 //3.3
-let log =""
+let log ="";
 router.get("/log.html",function(req,res,next){
-  let now = new Date()
-  log+=`<li>${now}</li>`
+  let now = new Date();
+  log+=`<li>${now}</li>`;
   res.send(`<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -62,12 +62,12 @@ router.get("/log.html",function(req,res,next){
   <body>
       <ul>${log}</ul>
   </body>
-  </html>`)
+  </html>`);
 });
 
 
 //3.4
-let visited = false
+let visited = false;
 router.get("/first.html",function(req,res,next){
 if(!visited){
   visited = true;
@@ -85,7 +85,7 @@ if(!visited){
     </body>
     </html>`);
 } else {
-  res.redirect("/main.html")
+  res.redirect("/main.html");
 }
 });
 
@@ -102,7 +102,7 @@ router.get("/main.html",function(req,res,next){
     <body>
         <h1>My main site</h1>
     </body>
-    </html>`)
+    </html>`);
   }else{
     res.redirect("/first.html");
   }

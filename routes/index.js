@@ -112,11 +112,22 @@ router.get("/main.html",function(req,res,next){
 
 
 //4.2
-let colors2 = ["red","yellow","green","blue"];
-let colors2Visited = 0;
+let color2 = ["red","yellow","green","blue"];
+let color2Visited = 0;
 router.get("/color.txt", function(req,res,next){
-  let color = colors2[colors2Visited%4];
-  colors2Visited++;
+  let color = color2[color2Visited%4];
+  color2Visited++;
   res.send(color);
 });
+
+
+//4.3
+let jstime = [];
+router.get("/log.json",function(req,res,next){
+  let now = String(new Date());
+  jstime.push(now);
+  res.send(JSON.stringify(jstime));
+});
+
+
 module.exports = router;

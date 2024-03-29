@@ -102,6 +102,7 @@ router.get("/main.html",function(req,res,next){
     </head>
     <body>
         <h1>My main site</h1>
+        <p>Random text</p><!-- random text -->
     </body>
     </html>`);
   }else{

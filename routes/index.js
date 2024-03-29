@@ -82,7 +82,6 @@ if(!visited){
     <body>
       <h1>Welcome</h1>
       <a href="/main.html">main</a>
-      <p>Random text</p><!-- random text -->
     </body>
     </html>`);
 } else {
@@ -102,6 +101,7 @@ router.get("/main.html",function(req,res,next){
     </head>
     <body>
         <h1>My main site</h1>
+        <p>Random text</p><!-- random text -->
     </body>
     </html>`);
   }else{

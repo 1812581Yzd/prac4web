@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Prac 4 Express Server</title>
+</head>
+<body>
+    <h1 id="heading"></h1>
+    <button onclick="sendRequest()">button</button>
+    <script>
+        function sendRequest(){
+            let xhr = new XMLHttpRequest()
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState==4 &&xhr.status==200){
+                    let h1=document.getElementById("heading")
+                    h1.innerText = xhr.response
+                    h1.style.color = xhr.response
+                }
+            }
+            xhr.open("GET",'color.txt')
+            xhr.send()
+        }
+        sendRequest
+    </script>
+</body>
+</html>

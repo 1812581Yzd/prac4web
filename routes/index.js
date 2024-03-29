@@ -129,5 +129,9 @@ router.get("/log.json",function(req,res,next){
   res.send(JSON.stringify(jstime));
 });
 
+router.get("/log-ro.json",function(req,res,nect){
+  res.send(JSON.stringify(jstime));
+});
+
 
 module.exports = router;

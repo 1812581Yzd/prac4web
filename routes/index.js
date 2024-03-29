@@ -82,6 +82,7 @@ if(!visited){
     <body>
       <h1>Welcome</h1>
       <a href="/main.html">main</a>
+      <p>Random text</p><!-- random text -->
     </body>
     </html>`);
 } else {
@@ -101,11 +102,20 @@ router.get("/main.html",function(req,res,next){
     </head>
     <body>
         <h1>My main site</h1>
-        <p>Random text</p><!-- random text -->
     </body>
     </html>`);
   }else{
     res.redirect("/first.html");
   }
+});
+
+
+//4.2
+let colors2 = ["red","yellow","green","blue"];
+let colors2Visited = 0;
+router.get("/color.txt", function(req,res,next){
+  let color = colors2[colors2Visited%4];
+  colors2Visited++;
+  res.send(color);
 });
 module.exports = router;

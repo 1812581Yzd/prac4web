@@ -82,6 +82,7 @@ if(!visited){
     <body>
       <h1>Welcome</h1>
       <a href="/main.html">main</a>
+      <p>Random text</p>
     </body>
     </html>`);
 } else {
